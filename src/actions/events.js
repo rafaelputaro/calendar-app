@@ -10,7 +10,7 @@ export const eventStartAddNew = (event) => {
             const resp = await fetchConToken('events', event, 'POST');
             const body = await resp.json();
             if (body.ok) {
-                event.id = body.evento.id;
+                event._id = body.evento.id;
                 event.user = {
                     _id: uid,
                     name: name
